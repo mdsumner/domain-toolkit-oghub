@@ -8,4 +8,4 @@ site: bookdown::bookdown_site
 
 # About this
 
-This workshop is for R users familiar with spatial workflows looking to provide a smoother shared toolkit for their research group. 
+This workshop is for R users familiar with spatial workflows looking to provide shared toolkit for their research group. 
