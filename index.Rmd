@@ -1,0 +1,11 @@
+---
+title: "Building a data library and R toolkit for domain-specific research group"
+author: Michael Sumner
+description: Building a data library and toolkit with bowerbird and R
+documentclass: book
+site: bookdown::bookdown_site
+---
+
+# About this
+
+This workshop is for R users familiar with spatial workflows looking to provide a smoother shared toolkit for their research group. 

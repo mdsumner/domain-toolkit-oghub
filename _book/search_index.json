@@ -1,0 +1,4 @@
+[
+["index.html", "Building a data library and R toolkit for domain-specific research group 1 About this", " Building a data library and R toolkit for domain-specific research group Michael Sumner 1 About this This workshop is for R users familiar with spatial workflows looking to provide a smoother shared toolkit for their research group. "],
+["getting-set-up.html", "2 Getting Set Up", " 2 Getting Set Up We need the latest versions of these R packages installed from GitHub. ## install.packages(&quot;remotes&quot;) remotes::install_github(&#39;ropensci/bowerbird&#39;) This workshop includes a pre-bundled data set using the piggyback GitHub releases mechanism. The bowerbird package will happily build this project from scratch from the original data providers, but it takes longer than we have for this workshop. piggyback::get_em() "]
+]

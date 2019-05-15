@@ -1,0 +1,15 @@
+# Getting Set Up
+
+We need the latest versions of these R packages installed from GitHub. 
+
+```{r setup, eval = FALSE}
+## install.packages("remotes")
+remotes::install_github('ropensci/bowerbird')
+```
+
+This workshop includes a pre-bundled data set using the `piggyback` GitHub releases mechanism. The bowerbird package will happily build this project from scratch from
+the original data providers, but it takes longer than we have for this workshop. 
+
+```{r pigback, eval = FALSE}
+piggyback::get_em()
+```
