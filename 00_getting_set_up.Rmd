@@ -1,15 +1,58 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Getting Set Up
 
 We need the latest versions of these R packages installed from GitHub. 
 
+It's best to run each line in turn in case there are issues or the user needs to provide input. 
+
 ```{r setup, eval = FALSE}
-## install.packages("remotes")
-remotes::install_github('ropensci/bowerbird')
+## make sure we have the packages we need
+req <- setdiff(c("dplyr", "ggplot2", "remotes"), installed.packages()[, 1])
+if (length(req) > 0) install.packages(req)
+
+## and some github packages
+req <- c("ropensci/antanym", "AustralianAntarcticDivision/blueant",
+         "AustralianAntarcticDivision/raadtools",
+         "AustralianAntarcticDivision/SOmap")
+req <- req[!basename(req) %in% installed.packages()[, 1]]
+if (length(req) > 0) remotes::install_github(req)
+
+library(remotes)
+install_github("AustralianAntarcticDivision/blueant")
+
+
 ```
 
-This workshop includes a pre-bundled data set using the `piggyback` GitHub releases mechanism. The bowerbird package will happily build this project from scratch from
+We can get everything we need by running the following code. 
+
+```{r get-data, eval = FALSE}
+
+library(dplyr)
+my_data_dir <- file.path(tempdir(), "datalibrary")
+dir.create(my_data_dir, showWarnings = FALSE)
+library(blueant)
+src <- bind_rows(
+  sources("NSIDC SMMR-SSM/I Nasateam sea ice concentration", hemisphere = "south",
+          time_resolutions = "day", years = 2013),
+  sources("ETOPO2 bathymetry"))
+result <- bb_get(src, local_file_root = my_data_dir, clobber = 0, verbose = TRUE,
+                 confirm = NULL)
+
+```
+
+
+## Undecided section
+
+This workshop may include a pre-bundled data set using the `piggyback` GitHub releases mechanism. The bowerbird package will happily build this project from scratch from
 the original data providers, but it takes longer than we have for this workshop. 
 
 ```{r pigback, eval = FALSE}
+system(glue::glue("tar zcvf datalibrary.tar.gz {my_data_dir}"))
+
+
 piggyback::get_em()
 ```

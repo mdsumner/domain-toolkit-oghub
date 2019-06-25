@@ -1,0 +1,31 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Overview 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+What is required for a domain-specific toolkit? 
+
+* where is the data?
+* where are the files? 
+* are the files up to date? 
+* how do I read the data? 
+* how do I map the data?
+* how do I integrate the data with my data? 
+
+# A preview with raadtools 
+
+This code relies on having run the set up in [setup link 00_getting_set_up](). 
+
+```{r}
+library(raadtools)
+my_data_dir <- file.path(tempdir(), "datalibrary")
+set_data_roots(my_data_dir)
+```
+
