@@ -7,6 +7,7 @@ editor_options:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(raadtools)
 ```
 
 
@@ -23,9 +24,48 @@ What is required for a domain-specific toolkit?
 
 This code relies on having run the set up in [setup link 00_getting_set_up](). 
 
-```{r}
+
+
+```{r setup-workshop, eval=FALSE}
 library(raadtools)
 my_data_dir <- file.path(tempdir(), "datalibrary")
 set_data_roots(my_data_dir)
 ```
+
+Our data toolkit is a growing collection of *known datasets*. Most can be read by raster or stars, but many have specific
+details that aren't easily understood by generic tools. 
+
+```{r ice}
+readice(latest = TRUE)  ## a map projection
+
+readsst("2002-01-01")   ## longlat regular 
+
+readcurr("2003-01-02", xylim = extent(100, 120, -40, -30))  ## two variables
+
+
+```
+
+# Where is the data?
+
+Nice if we have a single location for a shared data library, configurable and available to different systems (Linux, Windows, Mac, servers, desktop). 
+
+# Where are the files and are they up to date?
+
+An index of available file names is useful before we even access any data. 
+
+* time coverage
+* type of data
+
+This file listing provides an immediate check of suitability, maybe I need last week's data but only up to a month ago is avaiable. 
+
+Or perhaps only started in 2002 (and I need 1990). 
+
+# How to read the data? 
+
+We have standard read tools in raster, stars, rgdal, ncdf4, RNetCDF, rhdf5 ... but do they know about particular details and vagaries? 
+
+* Is time included, is georeferencing correct, are these static variables or paired vector components, a continuous or discrete quantity? 
+
+Plotting, mapping, projections, extractions, aggregating, ...
+
 

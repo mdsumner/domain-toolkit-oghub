@@ -51,8 +51,8 @@ This workshop may include a pre-bundled data set using the `piggyback` GitHub re
 the original data providers, but it takes longer than we have for this workshop. 
 
 ```{r pigback, eval = FALSE}
-system(glue::glue("tar zcvf datalibrary.tar.gz {my_data_dir}"))
-
-
-piggyback::get_em()
+## file nesting doesn't work well here
+#system("tar zcvf datalibrary.tar.gz data-library"))
+piggyback::pb_upload("data-library/datalibrary.tar.gz", tag = "v0.1.0", name = "datalibrary.tar.gz")
+piggyback::pb_download("datalibrary.tar.gz", dest = "data-library/datalibrary.tar.gz" )
 ```
