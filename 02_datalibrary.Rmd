@@ -1,0 +1,14 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+https://ropensci.org/blog/2018/11/13/antarctic/
+
+take content from https://github.com/AustralianAntarcticDivision/ropenblog/blob/master/antarctic.Rmd
+
+* marriage of disparate data, projections, raster/vector, time
+* hard problems start with real analysis, but keeping data up to date is a huge overhead
+* key is index of available files, wrapper funs to read by time/space
+

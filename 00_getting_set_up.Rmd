@@ -11,28 +11,27 @@ It's best to run each line in turn in case there are issues or the user needs to
 
 ```{r setup, eval = FALSE}
 ## make sure we have the packages we need
-req <- setdiff(c("dplyr", "ggplot2", "remotes"), installed.packages()[, 1])
-if (length(req) > 0) install.packages(req)
 
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
+}
+req1 <- c("dplyr", "ggplot2")
+remotes::install_cran(req1)
 ## and some github packages
-req <- c("ropensci/antanym", "AustralianAntarcticDivision/blueant",
+req2 <- c("ropensci/antanym", "AustralianAntarcticDivision/blueant",
          "AustralianAntarcticDivision/raadtools",
          "AustralianAntarcticDivision/SOmap")
-req <- req[!basename(req) %in% installed.packages()[, 1]]
-if (length(req) > 0) remotes::install_github(req)
-
-library(remotes)
-install_github("AustralianAntarcticDivision/blueant")
-
+remotes::install_github(req2)
 
 ```
 
-We can get everything we need by running the following code. 
+We can get everything we need for the workshop by running the following code. 
 
 ```{r get-data, eval = FALSE}
 
+td <- "."  ## Mike, change to tempdir()
 library(dplyr)
-my_data_dir <- file.path(tempdir(), "datalibrary")
+my_data_dir <- file.path(td, "data-library")
 dir.create(my_data_dir, showWarnings = FALSE)
 library(blueant)
 src <- bind_rows(
@@ -50,7 +49,7 @@ result <- bb_get(src, local_file_root = my_data_dir, clobber = 0, verbose = TRUE
 This workshop may include a pre-bundled data set using the `piggyback` GitHub releases mechanism. The bowerbird package will happily build this project from scratch from
 the original data providers, but it takes longer than we have for this workshop. 
 
-```{r pigback, eval = FALSE}
+```{r pigback, eval = FALSE, echo = FALSE}
 ## file nesting doesn't work well here
 #system("tar zcvf datalibrary.tar.gz data-library"))
 piggyback::pb_upload("data-library/datalibrary.tar.gz", tag = "v0.1.0", name = "datalibrary.tar.gz")
