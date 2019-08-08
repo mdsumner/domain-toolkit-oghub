@@ -129,7 +129,14 @@ img {
 <div id="TOC">
 <ul>
 <li><a href="index.html#about-this"><span class="toc-section-number">1</span> About this</a></li>
-<li><a href="getting-set-up.html#getting-set-up"><span class="toc-section-number">2</span> Getting Set Up</a></li>
+<li class="has-sub"><a href="getting-set-up.html#getting-set-up"><span class="toc-section-number">2</span> Getting Set Up</a><ul>
+<li><a href="getting-set-up.html#undecided-section"><span class="toc-section-number">2.1</span> Undecided section</a></li>
+</ul></li>
+<li><a href="overview.html#overview"><span class="toc-section-number">3</span> Overview</a></li>
+<li><a href="a-preview-with-raadtools.html#a-preview-with-raadtools"><span class="toc-section-number">4</span> A preview with raadtools</a></li>
+<li><a href="where-is-the-data.html#where-is-the-data"><span class="toc-section-number">5</span> Where is the data?</a></li>
+<li><a href="where-are-the-files-and-are-they-up-to-date.html#where-are-the-files-and-are-they-up-to-date"><span class="toc-section-number">6</span> Where are the files and are they up to date?</a></li>
+<li><a href="how-to-read-the-data.html#how-to-read-the-data"><span class="toc-section-number">7</span> How to read the data?</a></li>
 </ul>
 </div>
 </div>
@@ -139,15 +146,41 @@ img {
 <div id="getting-set-up" class="section level1">
 <h1><span class="header-section-number">2</span> Getting Set Up</h1>
 <p>We need the latest versions of these R packages installed from GitHub.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## install.packages(&quot;remotes&quot;)</span>
-remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;ropensci/bowerbird&#39;</span>)</code></pre>
-<p>This workshop includes a pre-bundled data set using the <code>piggyback</code> GitHub releases mechanism. The bowerbird package will happily build this project from scratch from
+<p>It’s best to run each line in turn in case there are issues or the user needs to provide input.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co">## make sure we have the packages we need</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="cf">if</span> (<span class="op">!</span><span class="kw">requireNamespace</span>(<span class="st">&quot;remotes&quot;</span>, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)) {</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">  <span class="kw">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">req1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>)</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">remotes<span class="op">::</span><span class="kw">install_cran</span>(req1)</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">## and some github packages</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">req2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;ropensci/antanym&quot;</span>, <span class="st">&quot;AustralianAntarcticDivision/blueant&quot;</span>,</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">         <span class="st">&quot;AustralianAntarcticDivision/raadtools&quot;</span>,</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">         <span class="st">&quot;AustralianAntarcticDivision/SOmap&quot;</span>)</a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">remotes<span class="op">::</span><span class="kw">install_github</span>(req2)</a></code></pre></div>
+<p>We can get everything we need for the workshop by running the following code.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">td &lt;-<span class="st"> &quot;.&quot;</span>  <span class="co">## Mike, change to tempdir()</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">my_data_dir &lt;-<span class="st"> </span><span class="kw">file.path</span>(td, <span class="st">&quot;data-library&quot;</span>)</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw">dir.create</span>(my_data_dir, <span class="dt">showWarnings =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="kw">library</span>(blueant)</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">src &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">  <span class="kw">sources</span>(<span class="st">&quot;NSIDC SMMR-SSM/I Nasateam sea ice concentration&quot;</span>, <span class="dt">hemisphere =</span> <span class="st">&quot;south&quot;</span>,</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">          <span class="dt">time_resolutions =</span> <span class="st">&quot;day&quot;</span>, <span class="dt">years =</span> <span class="dv">2013</span>),</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">  <span class="kw">sources</span>(<span class="st">&quot;ETOPO2 bathymetry&quot;</span>))</a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">result &lt;-<span class="st"> </span><span class="kw">bb_get</span>(src, <span class="dt">local_file_root =</span> my_data_dir, <span class="dt">clobber =</span> <span class="dv">0</span>, <span class="dt">verbose =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">                 <span class="dt">confirm =</span> <span class="ot">NULL</span>)</a></code></pre></div>
+<div id="undecided-section" class="section level2">
+<h2><span class="header-section-number">2.1</span> Undecided section</h2>
+<p>This workshop may include a pre-bundled data set using the <code>piggyback</code> GitHub releases mechanism. The bowerbird package will happily build this project from scratch from
 the original data providers, but it takes longer than we have for this workshop.</p>
-<pre class="sourceCode r"><code class="sourceCode r">piggyback<span class="op">::</span><span class="kw">get_em</span>()</code></pre>
 
+</div>
 </div>
 <p style="text-align: center;">
 <a href="index.html"><button class="btn btn-default">Previous</button></a>
+<a href="overview.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>
 </div>

@@ -2,58 +2,42 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 A preview with raadtools | Building a spatial data library and R toolkit</title>
-  <meta name="description" content="Building a data library and toolkit with bowerbird and R for a domain-specific research group." />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="4 A preview with raadtools | Building a spatial data library and R toolkit" />
+<meta property="og:type" content="book" />
 
-  <meta property="og:title" content="4 A preview with raadtools | Building a spatial data library and R toolkit" />
-  <meta property="og:type" content="book" />
-  
-  
-  <meta property="og:description" content="Building a data library and toolkit with bowerbird and R for a domain-specific research group." />
-  
 
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 A preview with raadtools | Building a spatial data library and R toolkit" />
-  
-  <meta name="twitter:description" content="Building a data library and toolkit with bowerbird and R for a domain-specific research group." />
-  
+<meta property="og:description" content="Building a data library and toolkit with bowerbird and R for a domain-specific research group." />
+
 
 <meta name="author" content="Michael Sumner" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="overview.html">
-<link rel="next" href="where-is-the-data.html">
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<meta name="description" content="Building a data library and toolkit with bowerbird and R for a domain-specific research group.">
+
+<title>4 A preview with raadtools | Building a spatial data library and R toolkit</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
 
 
-
-
-
-
-
-
-
+<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -110,65 +94,74 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
-<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
 </head>
 
 <body>
 
+<div class="container-fluid main-container">
 
 
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About this</a></li>
-<li class="chapter" data-level="2" data-path="getting-set-up.html"><a href="getting-set-up.html"><i class="fa fa-check"></i><b>2</b> Getting Set Up</a><ul>
-<li class="chapter" data-level="2.1" data-path="getting-set-up.html"><a href="getting-set-up.html#undecided-section"><i class="fa fa-check"></i><b>2.1</b> Undecided section</a></li>
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#about-this"><span class="toc-section-number">1</span> About this</a></li>
+<li class="has-sub"><a href="getting-set-up.html#getting-set-up"><span class="toc-section-number">2</span> Getting Set Up</a><ul>
+<li><a href="getting-set-up.html#undecided-section"><span class="toc-section-number">2.1</span> Undecided section</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>3</b> Overview</a></li>
-<li class="chapter" data-level="4" data-path="a-preview-with-raadtools.html"><a href="a-preview-with-raadtools.html"><i class="fa fa-check"></i><b>4</b> A preview with raadtools</a></li>
-<li class="chapter" data-level="5" data-path="where-is-the-data.html"><a href="where-is-the-data.html"><i class="fa fa-check"></i><b>5</b> Where is the data?</a></li>
-<li class="chapter" data-level="6" data-path="where-are-the-files-and-are-they-up-to-date.html"><a href="where-are-the-files-and-are-they-up-to-date.html"><i class="fa fa-check"></i><b>6</b> Where are the files and are they up to date?</a></li>
-<li class="chapter" data-level="7" data-path="how-to-read-the-data.html"><a href="how-to-read-the-data.html"><i class="fa fa-check"></i><b>7</b> How to read the data?</a></li>
+<li><a href="overview.html#overview"><span class="toc-section-number">3</span> Overview</a></li>
+<li><a href="a-preview-with-raadtools.html#a-preview-with-raadtools"><span class="toc-section-number">4</span> A preview with raadtools</a></li>
+<li><a href="where-is-the-data.html#where-is-the-data"><span class="toc-section-number">5</span> Where is the data?</a></li>
+<li><a href="where-are-the-files-and-are-they-up-to-date.html#where-are-the-files-and-are-they-up-to-date"><span class="toc-section-number">6</span> Where are the files and are they up to date?</a></li>
+<li><a href="how-to-read-the-data.html#how-to-read-the-data"><span class="toc-section-number">7</span> How to read the data?</a></li>
 </ul>
-
-      </nav>
-    </div>
-
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Building a spatial data library and R toolkit</a>
-          </h1>
-        </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
 <div id="a-preview-with-raadtools" class="section level1">
 <h1><span class="header-section-number">4</span> A preview with raadtools</h1>
 <p>This code relies on having run the set up in <a href="">setup link 00_getting_set_up</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(raadtools)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">my_data_dir &lt;-<span class="st"> </span><span class="kw">file.path</span>(<span class="kw">tempdir</span>(), <span class="st">&quot;datalibrary&quot;</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">set_data_roots</span>(my_data_dir)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(raadtools)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">my_data_dir &lt;-<span class="st"> </span><span class="kw">file.path</span>(<span class="kw">tempdir</span>(), <span class="st">&quot;datalibrary&quot;</span>)</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw">set_data_roots</span>(my_data_dir)</a></code></pre></div>
 <p>Our data toolkit is a growing collection of <em>known datasets</em>. Most can be read by raster or stars, but many have specific
 details that aren’t easily understood by generic tools.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">readice</span>(<span class="dt">latest =</span> <span class="ot">TRUE</span>)  <span class="co">## a map projection</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">readice</span>(<span class="dt">latest =</span> <span class="ot">TRUE</span>)  <span class="co">## a map projection</span></a></code></pre></div>
 <pre><code>## class      : RasterStack 
 ## dimensions : 332, 316, 104912, 1  (nrow, ncol, ncell, nlayers)
 ## resolution : 25000, 25000  (x, y)
 ## extent     : -3950000, 3950000, -3950000, 4350000  (xmin, xmax, ymin, ymax)
 ## crs        : +proj=stere +lat_0=-90 +lat_ts=-70 +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=6378273 +b=6356889.449 +units=m +no_defs 
-## names      : nt_20190730_f18_nrt_s.bin 
+## names      : nt_20190806_f18_nrt_s.bin 
 ## min values :                         0 
 ## max values :                       100 
-## time        : 2019-07-30</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">readsst</span>(<span class="st">&quot;2002-01-01&quot;</span>)   <span class="co">## longlat regular </span></a></code></pre></div>
+## time        : 2019-08-06</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">readsst</span>(<span class="st">&quot;2002-01-01&quot;</span>)   <span class="co">## longlat regular </span></a></code></pre></div>
 <pre><code>## class      : RasterLayer 
 ## dimensions : 720, 1440, 1036800  (nrow, ncol, ncell)
 ## resolution : 0.25, 0.25  (x, y)
@@ -178,7 +171,7 @@ details that aren’t easily understood by generic tools.</p>
 ## names      : Daily.sea.surface.temperature 
 ## values     : -1.8, 32.75  (min, max)
 ## time       : 2002-01-01</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">readcurr</span>(<span class="st">&quot;2003-01-02&quot;</span>, <span class="dt">xylim =</span> <span class="kw">extent</span>(<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">-40</span>, <span class="dv">-30</span>))  <span class="co">## two variables</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">readcurr</span>(<span class="st">&quot;2003-01-02&quot;</span>, <span class="dt">xylim =</span> <span class="kw">extent</span>(<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">-40</span>, <span class="dv">-30</span>))  <span class="co">## two variables</span></a></code></pre></div>
 <pre><code>## class      : RasterStack 
 ## dimensions : 40, 80, 3200, 2  (nrow, ncol, ncell, nlayers)
 ## resolution : 0.25, 0.25  (x, y)
@@ -189,58 +182,24 @@ details that aren’t easily understood by generic tools.</p>
 ## max values :                                         0.5347,                                            0.5603 
 ## time        : 2003-01-02, 2003-01-02</code></pre>
 </div>
-            </section>
+<p style="text-align: center;">
+<a href="overview.html"><button class="btn btn-default">Previous</button></a>
+<a href="where-is-the-data.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
 
-          </div>
-        </div>
-      </div>
-<a href="overview.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="where-is-the-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
-  </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+
+</div>
+
 <script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"google": false,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"download": null,
-"toc": {
-"collapse": "section",
-"scroll_highlight": true
-}
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 });
-});
+
 </script>
 
 </body>
-
 </html>
