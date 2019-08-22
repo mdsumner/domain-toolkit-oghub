@@ -1,8 +1,10 @@
 bookdown::gitbook:
-  css: styles.css
+  css: style.css
   config:
     toc:
-      collapse: section
-      scroll_highlight: yes
-bookdown::html_book:
-  split_by: chapter
+      before: |
+        <li><a href="./">A Domain Specific Toolkit in R</a></li>
+      after: |
+        <li><a href="https://github.com/mdsumner/domain-toolkit-oghub" target="blank">Published with bookdown</a></li>
+    edit: https://github.com/mdsumner/domain-toolkit-oghub/edit/master/%s
+

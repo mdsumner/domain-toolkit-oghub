@@ -1,8 +1,4 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
+
 # Getting Set Up
 
 We need the latest versions of these R packages installed from GitHub. 

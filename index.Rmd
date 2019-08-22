@@ -1,11 +1,43 @@
 ---
 title: "Building a spatial data library and R toolkit"
-author: Michael Sumner
-description: Building a data library and toolkit with bowerbird and R for a domain-specific research group. 
-documentclass: book
+author: "Michael Sumner"
+date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+github-repo: mdsumner/domain-toolkit-oghub
+description: "Building a data library and toolkit with bowerbird and R for a domain-specific research group"
 ---
 
 # About this
 
 This workshop is for R users familiar with spatial workflows looking to provide shared toolkit for their research group. 
+
+
+R is now used at all levels of scientific project work including obtaining raw data, indexing and processing public data streams and writing analyses and reports. This workshop describes the components involved in a domain-specific R toolkit that provides access to a wide variety of remote sensing, model output, and time-series environmental data. 
+
+This session will explore a domain specific toolkit written for Southern Ocean ecosystems research. We will obtain a set of remote sensing time series data (sea ice concentration), a global topography data set, and use these to match up values in space and time with a tracking data set from elephant seals in the southern ocean. The key components of the toolkit solve the following problems: 
+
+* where do these external environmental data come from? 
+* where do we store our local copies and how is the data kept up to date for local use? 
+* how is the data read and understood? 
+* how to integrate environmental data with our research data? 
+
+
+
+
+SETUP
+
+https://mdsumner.github.io/domain-toolkit-oghub/getting-set-up.html#getting-set-up
+
+
+DATA SETS USED
+
+NSIDC SMMR-SSM/I Nasateam sea ice concentration, daily for 2013 in the southern hemisphere https://nsidc.org/data/nsidc-0051
+
+ETOPO2 global topography https://www.ngdc.noaa.gov/mgg/global/etopo2.html
+
+
+`mirounga_leonina` Example elephant seal Argos tracking data, https://github.com/ianjonsen/bsam
+
+
