@@ -30,6 +30,7 @@ We can get everything we need for the workshop by running the following code.
 ```{r get-data, eval = FALSE}
 
 td <- "."  ## Mike, change to tempdir()
+td <- normalizePath("~")
 library(dplyr)
 my_data_dir <- file.path(td, "data-library")
 dir.create(my_data_dir, showWarnings = FALSE)
@@ -40,6 +41,9 @@ src <- bind_rows(
   sources("ETOPO2 bathymetry"))
 result <- bb_get(src, local_file_root = my_data_dir, clobber = 0, verbose = TRUE,
                  confirm = NULL)
+
+raadfiles::set_raad_data_roots(my_data_dir, replace_existing = TRUE)
+raadtools::set_data_roots(my_data_dir)
 
 ```
 

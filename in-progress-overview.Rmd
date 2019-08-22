@@ -1,0 +1,40 @@
+
+This session will first present a way of working with a data library that we have developed. I'll show some examples of reading remote sensing data, comparing it with a global topographic data set. In the next section we will all create that toolkit and use it with these two data sets. Our data library includes dozens of other types of data sources, but it's too much to replicate in a short session. 
+
+We tend to see these three tasks done by a researcher all mixed together. 
+
+Get Files. 
+
+Index Files. 
+
+Read Files. 
+
+
+
+## Get Files
+
+Download files for a collection. 
+
+Specify file type, pattern. 
+
+We need a download method, check local copy for updates at source, unzip after download. 
+
+Download method may be http, ftp, require login, or special queries. 
+
+
+## Index Files
+
+Listing files is best done regularly, it takes time so should be cached. 
+
+List all files in the library, keep a copy of the list, search the list for targets. 
+
+File names can change, directory structure can change, so search needs to be general or easily updateable. 
+
+## Read Files
+
+So many formats!  
+
+GDAL, rgdal, sf, raster, stars, NetCDF, GeoTIFF, raw binary, text files
+
+
+
